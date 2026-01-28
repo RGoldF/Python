@@ -15,4 +15,4 @@ wait.until(EC.text_to_be_present_in_element((By.ID, "updatingButton"), "SkyPro")
 txt = driver.find_element(By.ID, "updatingButton").text
 print(txt)
 
-driver.quit() 
+driver.quit()
