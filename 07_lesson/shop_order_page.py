@@ -16,6 +16,7 @@ class Order:
 
     def get_total_price(self):
         total_element = WebDriverWait(self._driver, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "summary_total_label"))
+            EC.presence_of_element_located((By.CLASS_NAME,
+                                            "summary_total_label"))
         )
         return total_element.text

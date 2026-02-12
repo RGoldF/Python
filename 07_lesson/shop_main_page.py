@@ -8,12 +8,15 @@ class MainPage:
 
     def add_products(self, products_to_add=None):
         if products_to_add is None:
-            products_to_add = ["Sauce Labs Backpack", "Sauce Labs Bolt T-Shirt", "Sauce Labs Onesie"]
+            products_to_add = ["Sauce Labs Backpack",
+                               "Sauce Labs Bolt T-Shirt", "Sauce Labs Onesie"]
 
         for product_name in products_to_add:
-            add_button = self._driver.find_element(
-                By.XPATH, f"//div[text()='{product_name}']/ancestor::div[@class='inventory_item']//button"
+            xpath = (
+                f"//div[text()='{product_name}']/ancestor::"
+                f"div[@class='inventory_item']//button"
             )
+            add_button = self._driver.find_element(By.XPATH, xpath)
             add_button.click()
 
     def go_to_cart(self):
